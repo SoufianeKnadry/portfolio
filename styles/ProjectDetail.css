@@ -110,13 +110,18 @@
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px
 }
 .details-project-video{
   width: 90%;
   align-self: center;
   text-align: center;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .tools-header {
@@ -166,7 +171,7 @@
 }
 .details-tools-div:hover{
   scale: 0.91;
-  box-shadow: -1px -1px 11px 8px #31193b1a;
+  box-shadow: -1px -1px 11px 8px #0a0a0a1a;
 
 }
 .tool-item {

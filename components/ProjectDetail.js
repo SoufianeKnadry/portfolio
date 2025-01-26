@@ -1,11 +1,13 @@
 import { X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "../styles/ProjectDetail.css";
 import Image from 'next/image';
 
 export function ProjectDetail({ project, onClose }) {
   const [isVisible, setIsVisible] = useState(false);
+  const titleRef = useRef(null); // Create a reference for the title text
+  const toolsRef = useRef(null); // Create a reference for the tools container
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 50);
@@ -13,14 +15,28 @@ export function ProjectDetail({ project, onClose }) {
   }, []);
 
   useEffect(() => {
-    if (isVisible) {
+    if (titleRef.current) {
+      const titleText = project.title;
       gsap.fromTo(
-        ".tool-item",
-        { opacity: 0, x: 50 }, 
-        { opacity: 1, x: 0, stagger: 0.15, duration: 0.6, ease: "expo.out" } 
+        titleRef.current,
+        { text: "afgsdjlok2" },  
+        { 
+          text: titleText, 
+          duration: titleText.length * 0.1,  
+          ease: "linear", 
+          delay: 0.4
+        }
       );
     }
-  }, [isVisible]);
+
+    if (toolsRef.current) {
+      gsap.fromTo(
+        toolsRef.current.querySelectorAll('.tool-item'),
+        { opacity: 0, x: 50 }, 
+        { opacity: 1, x: 0, stagger: 0.15, duration: 0.6, ease: "expo.out" }
+      );
+    }
+  }, [project.title]);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -42,7 +58,6 @@ export function ProjectDetail({ project, onClose }) {
             <div className="video-placeholder">
               <div className="details-project-video-container">
                 <video
-                  
                   src={project.videoUrl}
                   autoPlay
                   loop
@@ -51,7 +66,7 @@ export function ProjectDetail({ project, onClose }) {
                   className="details-project-video"
                 ></video>
                 <h3 className="tools-header">Tools Used</h3>
-                <div className="details-tools-div">
+                <div className="details-tools-div" ref={toolsRef}>
                   {project.tools.map((tool, index) => (
                     <div key={index} className="tool-item">
                       {tool.imgUrl ? (
@@ -59,8 +74,8 @@ export function ProjectDetail({ project, onClose }) {
                           src={tool.imgUrl}
                           alt={`${tool.name} icon`}
                           className="tool-icon"
-                          width={20}  
-                          height={20} 
+                          width={20}
+                          height={20}
                         />
                       ) : (
                         <div className="tool-icon-placeholder">🛠</div>
@@ -74,7 +89,7 @@ export function ProjectDetail({ project, onClose }) {
           </div>
           <div className="project-detail-divider"></div>
           <div className="project-info">
-            <h2 className="project-detail-title">{project.title}</h2>
+            <h2 className="project-detail-title" ref={titleRef}></h2> {/* Typing effect will be applied here */}
             <p className="project-detail-description">{project.description}</p>
           </div>
         </div>
