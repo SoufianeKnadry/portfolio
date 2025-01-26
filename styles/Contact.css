@@ -1,0 +1,39 @@
+.contact-section {
+  background-color: var(--color-background);
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-content {
+  text-align: center;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-icons svg {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+.contact-icons svg:hover {
+  color: var(--color-secondary);
+}
+
+.designer-text {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: 0.3rem;
+}
+
+.copyright-text {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+

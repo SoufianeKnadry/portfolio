@@ -1,0 +1,33 @@
+.project-card {
+  background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary));
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 16 / 9;
+}
+
+.project-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.project-title {
+  color: var(--color-background);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    max-width: 100%;
+  }
+}
+
