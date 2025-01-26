@@ -38,6 +38,9 @@ export function ProjectDetail({ project, onClose }) {
               playsInline
               className="details-project-video"
             ></video>
+              <div className="details-tools-div">
+                
+              </div>
               </div>
             </div>
           </div>
