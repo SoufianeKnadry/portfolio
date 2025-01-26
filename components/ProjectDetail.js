@@ -12,7 +12,7 @@ export function ProjectDetail({ project, onClose }) {
 
   const handleClose = () => {
     setIsVisible(false)
-    setTimeout(onClose, 300) // Wait for the animation to finish before closing
+    setTimeout(onClose, 300) 
   }
 
   return (
@@ -28,7 +28,18 @@ export function ProjectDetail({ project, onClose }) {
         <div className={`project-detail-content ${isVisible ? "visible" : ""}`}>
           <div className="project-video">
             {/* Placeholder for video */}
-            <div className="video-placeholder">Video Placeholder</div>
+            <div className="video-placeholder">
+              <div className="details-project-video-container">
+              <video
+              src={project.videoUrl}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="details-project-video"
+            ></video>
+              </div>
+            </div>
           </div>
           <div className="project-detail-divider"></div>
           <div className="project-info">
