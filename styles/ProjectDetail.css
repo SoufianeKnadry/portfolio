@@ -104,6 +104,51 @@
   color: #e1e1e1;
   line-height: 1.6;
 }
+/* Icons details*/
+
+.details-tools-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  background: linear-gradient(45deg, #020102, #201a2b);
+  padding: 1.5rem;
+  margin: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0px 5px 11px 8px rgb(65 34 79 / 10%);
+}
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.tool-icon-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 18px;
+  color: #666;
+}
+
+.tool-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+
 
 @media (max-width: 768px) {
   .project-detail-content {

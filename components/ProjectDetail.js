@@ -1,19 +1,20 @@
-import { X } from "lucide-react"
-import { useState, useEffect } from "react"
-import "../styles/ProjectDetail.css"
+import { X } from "lucide-react";
+import { useState, useEffect } from "react";
+import "../styles/ProjectDetail.css";
+import Image from 'next/image';
 
 export function ProjectDetail({ project, onClose }) {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 50)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleClose = () => {
-    setIsVisible(false)
-    setTimeout(onClose, 300) 
-  }
+    setIsVisible(false);
+    setTimeout(onClose, 300);
+  };
 
   return (
     <div className={`project-detail-overlay ${isVisible ? "visible" : ""}`}>
@@ -30,17 +31,32 @@ export function ProjectDetail({ project, onClose }) {
             {/* Placeholder for video */}
             <div className="video-placeholder">
               <div className="details-project-video-container">
-              <video
-              src={project.videoUrl}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="details-project-video"
-            ></video>
-              <div className="details-tools-div">
-                
-              </div>
+                <video
+                  src={project.videoUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="details-project-video"
+                ></video>
+                <div className="details-tools-div">
+                  {project.tools.map((tool, index) => (
+                    <div key={index} className="tool-item">
+                      {tool.imgUrl ? (
+                        <Image
+                          src={tool.imgUrl}
+                          alt={`${tool.name} icon`}
+                          className="tool-icon"
+                          width={20}  
+                          height={20} 
+                        />
+                      ) : (
+                        <div className="tool-icon-placeholder">🛠</div>
+                      )}
+                      <span className="tool-name">{tool.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -52,6 +68,5 @@ export function ProjectDetail({ project, onClose }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
