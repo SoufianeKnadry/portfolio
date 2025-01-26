@@ -50,6 +50,7 @@ export function ProjectDetail({ project, onClose }) {
                   playsInline
                   className="details-project-video"
                 ></video>
+                <h3 className="tools-header">Tools Used</h3>
                 <div className="details-tools-div">
                   {project.tools.map((tool, index) => (
                     <div key={index} className="tool-item">
