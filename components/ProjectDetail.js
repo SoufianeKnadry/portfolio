@@ -1,5 +1,6 @@
 import { X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { gsap } from "gsap";
 import "../styles/ProjectDetail.css";
 import Image from 'next/image';
 
@@ -10,6 +11,16 @@ export function ProjectDetail({ project, onClose }) {
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      gsap.fromTo(
+        ".tool-item",
+        { opacity: 0, x: 50 }, 
+        { opacity: 1, x: 0, stagger: 0.15, duration: 0.6, ease: "expo.out" } 
+      );
+    }
+  }, [isVisible]);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -28,10 +39,10 @@ export function ProjectDetail({ project, onClose }) {
         </button>
         <div className={`project-detail-content ${isVisible ? "visible" : ""}`}>
           <div className="project-video">
-            {/* Placeholder for video */}
             <div className="video-placeholder">
               <div className="details-project-video-container">
                 <video
+                  
                   src={project.videoUrl}
                   autoPlay
                   loop

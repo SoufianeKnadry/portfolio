@@ -20,6 +20,7 @@ export const skillCategories = [
       { name: "React", imgUrl: "/images/react.png" },
       { name: "Tailwind", imgUrl: "/images/tailwind.png" },
       { name: "Next.js", imgUrl: "/images/nextjs.png" },
+      { name: "Vite", imgUrl: "/images/vite.png"}
     ],
   },
   {
@@ -33,6 +34,8 @@ export const skillCategories = [
       { name: "AWS", imgUrl: "/images/aws.png" },
       { name: "Flask", imgUrl: "/images/flask.png" },
       { name: "Android Studio", imgUrl: "/images/androidstudio.webp" },
+      { name: ".Net", imgUrl: "/images/dotnet.png"},
+      { name: "Express", imgUrl: "/images/express.png"}
     ],
   },
   {

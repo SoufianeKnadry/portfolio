@@ -11,7 +11,7 @@ export const projectsData = [
       { name: "React", imgUrl: "/images/react.png" },
       { name: "JavaScript", imgUrl: "/images/javascript.png" },
       { name: "Node", imgUrl: "/images/node.png" },
-      { name: "Express", imgUrl: null },
+      { name: "Express", imgUrl: "/images/express.png" },
       { name: "Git", imgUrl: "/images/git.png" },
     ],
     date: "2023-01-15",
@@ -22,7 +22,7 @@ export const projectsData = [
     title: "Recipe App",
     description:
       "A desktop application to manage recipes, built with C# and a database backend for efficient storage and retrieval.",
-    videoUrl: "/videos/recipe_app.mp4",
+    videoUrl: "/videos/project1.mp4",
     tools: [
       { name: "C#", imgUrl: "/images/csharp.png" },
       { name: "SQL", imgUrl: "/images/sql.png" },
