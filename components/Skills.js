@@ -40,7 +40,7 @@ export function Skills() {
         { name: "Linux", imgUrl: "/images/linux.png" },
         { name: "AWS", imgUrl:"/images/aws.png"},
         { name: "Flask", imgUrl:"/images/flask.png"},
-        { name: "Android Studio", imgUrl:"/images/androidstudio.png"}
+        { name: "Android Studio", imgUrl:"/images/androidstudio.webp"}
       ],
     },
     {
