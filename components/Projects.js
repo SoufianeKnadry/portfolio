@@ -1,55 +1,50 @@
-"use client"
+"use client";
 
-import { useState, useRef, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Project } from "./Project"
-import { ProjectDetail } from "./ProjectDetail"
-import "../styles/Projects.css"
+import { useState, useRef, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Project } from "./Project";
+import { ProjectDetail } from "./ProjectDetail";
+import { projectsData } from "../data/projects";
+import "../styles/Projects.css";
 
 export function Projects() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [totalSlides, setTotalSlides] = useState(0)
-  const [selectedProject, setSelectedProject] = useState(null)
-  const carouselRef = useRef(null)
-
-  const projectsData = [...Array(10)].map((_, index) => ({
-    id: index,
-    title: `Project ${index + 1}`,
-    description: `This is a detailed description of Project ${index + 1}. It includes information about the project's goals, technologies used, and outcomes achieved.`,
-  }))
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [totalSlides, setTotalSlides] = useState(0);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const carouselRef = useRef(null);
 
   useEffect(() => {
     const updateTotalSlides = () => {
-      const isMobile = window.innerWidth < 768
-      setTotalSlides(isMobile ? projectsData.length : Math.ceil(projectsData.length / 2))
-    }
+      const isMobile = window.innerWidth < 768;
+      setTotalSlides(isMobile ? projectsData.length : Math.ceil(projectsData.length / 2));
+    };
 
-    updateTotalSlides()
-    window.addEventListener("resize", updateTotalSlides)
-    return () => window.removeEventListener("resize", updateTotalSlides)
-  }, [projectsData.length])
+    updateTotalSlides();
+    window.addEventListener("resize", updateTotalSlides);
+    return () => window.removeEventListener("resize", updateTotalSlides);
+  }, []);
 
   const scroll = (direction) => {
     if (direction === "left") {
-      setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : totalSlides - 1))
+      setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : totalSlides - 1));
     } else {
-      setCurrentIndex((prevIndex) => (prevIndex < totalSlides - 1 ? prevIndex + 1 : 0))
+      setCurrentIndex((prevIndex) => (prevIndex < totalSlides - 1 ? prevIndex + 1 : 0));
     }
-  }
+  };
 
   useEffect(() => {
     if (carouselRef.current) {
-      carouselRef.current.style.transform = `translateX(-${currentIndex * 100}%)`
+      carouselRef.current.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
-  }, [currentIndex])
+  }, [currentIndex]);
 
-  const handleProjectClick = (index) => {
-    setSelectedProject(projectsData[index])
-  }
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+  };
 
   const closeProjectDetail = () => {
-    setSelectedProject(null)
-  }
+    setSelectedProject(null);
+  };
 
   return (
     <section id="projects" className="projects-section">
@@ -64,9 +59,9 @@ export function Projects() {
             <ChevronLeft size={24} />
           </button>
           <div className="projects-carousel" ref={carouselRef}>
-            {projectsData.map((project, index) => (
+            {projectsData.map((project) => (
               <div key={project.id} className="carousel-item">
-                <Project index={index} onClick={handleProjectClick} />
+                <Project project={project} onClick={() => handleProjectClick(project)} />
               </div>
             ))}
           </div>
@@ -91,6 +86,5 @@ export function Projects() {
       </div>
       {selectedProject && <ProjectDetail project={selectedProject} onClose={closeProjectDetail} />}
     </section>
-  )
+  );
 }
-
