@@ -54,7 +54,7 @@ export function Projects() {
   return (
     <section id="projects" className="projects-section">
       <div className="projects-content">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="projects-title">Projects</h2>
         <div className="projects-container">
           <button
             onClick={() => scroll("left")}

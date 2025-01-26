@@ -23,6 +23,7 @@ export function Skills() {
       skills: [
         { name: "HTML", imgUrl: "/images/html.png" },
         { name: "CSS", imgUrl: "/images/css.png" },
+        { name: "Node", imgUrl: "/images/node.png" },
         { name: "React", imgUrl: "/images/react.png" },
         { name: "Tailwind", imgUrl: "/images/tailwind.png" },
         { name: "Next.js", imgUrl: "/images/nextjs.png" },
@@ -31,16 +32,14 @@ export function Skills() {
     {
       name: "Tools",
       skills: [
-        { name: "Node", imgUrl: "/images/node.png" },
         { name: "Docker", imgUrl: "/images/docker.png" },
-        { name: "Sql", imgUrl: "/images/sql.png" },
         { name: "Git", imgUrl: "/images/git.png" },
         { name: "Visual Studios", imgUrl: "/images/visualstudios.png" },
         { name: "Avalonia", imgUrl: "/images/avalonia.png" },
         { name: "Linux", imgUrl: "/images/linux.png" },
         { name: "AWS", imgUrl:"/images/aws.png"},
         { name: "Flask", imgUrl:"/images/flask.png"},
-        { name: "Android Studio", imgUrl:"/images/androidstudio.webp"}
+        { name: "Android Studio", imgUrl:"/images/androidstudio.webp"},
       ],
     },
     {
@@ -48,6 +47,8 @@ export function Skills() {
       skills: [
         { name: "SQL", imgUrl: "/images/sql.png" },
         { name: "MongoDb", imgUrl: "/images/mongodb.png" },
+        { name: "Oracle", imgUrl:"/images/oracle.png" }
+
       ],
     },
   ];
