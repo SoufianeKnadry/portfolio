@@ -89,9 +89,16 @@ export function ProjectDetail({ project, onClose }) {
           </div>
           <div className="project-detail-divider"></div>
           <div className="project-info">
-            <h2 className="project-detail-title" ref={titleRef}></h2> {/* Typing effect will be applied here */}
-            <p className="project-detail-description">{project.description}</p>
+            
+          <h2 className="project-detail-title" ref={titleRef}></h2> 
+          <div className="project-detail-description-box">
+          {project.description.map((desc, index) => (
+            <p key={index} className="project-detail-description">{desc}</p>
+          ))}
           </div>
+  
+        </div>
+
         </div>
       </div>
     </div>
