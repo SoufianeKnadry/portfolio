@@ -25,14 +25,14 @@ cards.forEach( el =>{
         el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.1)`;
         el.children[0].style.transition = 'transform 0.15s ease-out'
         el.children[0].children[0].style.transform = `translate(-${offsetX}%, ${offsetY}%) scale(1.1)`;
-        el.children[0].style. boxShadow = `${-angleY}px ${angleX}px 20px 15px rgba(0,0,0,0.25), 0 0 20px 15px rgba(0,0,0,0.25) inset`;
     })
 
   
     el.addEventListener("mouseleave", ()=>{
         el.children[0].style.transform = `rotateX(0) rotateY(0)`
-        el.children[0].style.transition = 'transform 0.5s ease-in, box-shadow 0.25s ease-in-out'
+        el.children[0].style.transition = 'transform 0.5s ease-in'
         el.children[0].children[0].style.transform = `translate(0%,0%)`;
+
     })
 
 })

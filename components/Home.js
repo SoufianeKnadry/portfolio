@@ -30,12 +30,11 @@ export function Home() {
                   </div>
                 </div>
                 <div className="home-img-text">
-                  <small>Portfolio</small>
              
-                  <p>
-                    I am a computer science student at Dawson.
+                  <p className="profile-desc-info">
+                    Computer Science student at Dawson
                   </p>
-                  <h1>Knadry Soufiane</h1>
+                  <h1 className="profile-desc-name">Soufiane Knadry</h1>
                 </div>
               </div>
             </div>

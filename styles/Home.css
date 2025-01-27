@@ -116,14 +116,14 @@
 
 
 /* 3d-card */
-
 .card-3d {
-  width: 350px;
+  width: 400px;
   border-radius: 10px;
   perspective: 1000px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 5rem;
 }
 
 .content-card {
@@ -154,18 +154,17 @@
 }
 
 #container3D {
+  background: linear-gradient(162deg, #000, #1c1d23);
   padding: 2rem;
-  border: solid 1px;
+  border: 1px solid #3786F3;
   border-radius: 1rem;
-  margin: 1rem;
-  background-color: #000000;
-
+  margin: 3rem;
 }
 
 /* Skewed */
 
 .skewed .image::before {
-  width: 120%;
+  width: 122%;
   height: 40%;
   top: -5em;
   left: 50%;
@@ -175,8 +174,8 @@
 .skewed-left .image:before {
   transform: translate(-50%) rotate(18deg);
   top: initial;
-  bottom: -3em;
-  z-index: 20;
+  bottom: -4em;
+  z-index: 2;
 }
 .image{
   height: 17em;
@@ -198,8 +197,26 @@
   box-shadow: 10px -13px 20px #000000b3;
 }
 
-.home-img-text{
+.home-img-text {
   background: #111;
   min-height: 7rem;
   padding: 1rem;
+  position: relative;
+  bottom: 1px;
+}
+
+/* Profile desc */
+
+
+.profile-desc-info{
+  position: relative;
+  bottom: 1rem;
+  color: #54adff;
+  font-weight: 600;
+}
+
+.profile-desc-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f8fcff;
 }
