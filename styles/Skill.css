@@ -12,9 +12,10 @@
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(68, 157, 182, 0.2);
-  scale: 1.02;
+  box-shadow: 0 4px 15px rgba(68, 157, 182, 0.2);
+  scale: 1.01;
   transition: 0.3s;
+  border: solid rgb(51, 198, 212) 1px;
 }
 
 .skill-content {

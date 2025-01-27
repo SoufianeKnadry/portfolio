@@ -19,7 +19,6 @@
   width: 100%;
   padding: 2rem;
   display: flex;
-  align-items: center;
   justify-content: center;
   position: relative;
   z-index: 10;
@@ -27,19 +26,37 @@
 
 .profile-card {
   background-color: var(--color-surface);
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 2rem;
+  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;
   padding: 1.5rem;
-  max-width: 24rem;
-  width: 100%;
+  max-width: 20rem;
+  background-color: #111;
+  background-image: linear-gradient(32deg, #080808bd 30px, #000000ba);
+  transform: translate(0);
+  width: 65%;
+  height: 65%;
 }
 
 .profile-image {
   aspect-ratio: 1 / 1;
-  border-radius: 0.5rem;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+}
+.profile-image img {
+  border-radius: 50%;
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 8px #0003;
+  max-width: 90%;
 }
 
+.profile-details{
+  background: linear-gradient();
+}
 .profile-name {
   margin-top: 1rem;
   font-size: 1.25rem;

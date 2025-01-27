@@ -51,15 +51,18 @@ export function Home() {
         <div className="profile-card">
           <div className="profile-image">
             <Image
-              src="/placeholder.svg?height=400&width=400"
+              src="/images/soufiane.JPG"
               alt="Knadry Soufiane"
               width={400}
               height={400}
               className="object-cover"
             />
           </div>
-          <h2 className="profile-name">Knadry Soufiane</h2>
-          <p className="profile-title">Web Developer & Designer</p>
+          <div className="profile-details">
+            <h2 className="profile-name">Knadry Soufiane</h2>
+            <p className="profile-title">Web Developer & Designer</p>
+          </div>
+         
         </div>
       </div>
 

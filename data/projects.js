@@ -19,7 +19,7 @@ export const projectsData = [
       { name: "Git", imgUrl: "/images/git.png" }
     ],
     date: "2023-01-15",
-    github: "https://github.com/username/air-traffic-app"
+    github: "https://github.com/SoufianeKnadry/Air-Traffic-Project"
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ export const projectsData = [
       { name: "Git", imgUrl: "/images/git.png" }
     ],
     date: "2023-03-20",
-    github: "https://github.com/username/recipe-app"
+    github: "https://github.com/SoufianeKnadry/Recipe-Application"
   },
   {
     id: 3,
@@ -61,7 +61,7 @@ export const projectsData = [
       { name: "Git", imgUrl: "/images/git.png" }
     ],
     date: "2023-05-10",
-    github: "https://github.com/username/appointment-app"
+    github: "https://github.com/SoufianeKnadry/Meetings-Application"
   },
   {
     id: 4,
@@ -80,7 +80,7 @@ export const projectsData = [
       { name: "Git", imgUrl: "/images/git.png" }
     ],
     date: "2023-07-05",
-    github: "https://github.com/username/book-reading-app"
+    github: "https://github.com/SoufianeKnadry/Book-Reading-App"
   },
   {
     id: 5,
@@ -98,7 +98,7 @@ export const projectsData = [
       { name: "Git", imgUrl: "/images/git.png" }
     ],
     date: "2023-09-01",
-    github: "https://github.com/username/paint-drops-simulation"
+    github: "https://github.com/SoufianeKnadry/PaintDrops-Simulation"
   },
   {
     id: 6,
@@ -117,6 +117,6 @@ export const projectsData = [
       { name: "Git", imgUrl: "/images/git.png" }
     ],
     date: "2023-11-18",
-    github: "https://github.com/username/sensors-project"
+    github: "https://github.com/SoufianeKnadry/Sensors-Project"
   }
 ];

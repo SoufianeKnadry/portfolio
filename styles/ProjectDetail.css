@@ -237,7 +237,47 @@
   border-radius: 11px;
   box-shadow: inset -1px -2px 6px rgb(41 35 35 / 70%), 0 10px 30px rgba(0, 0, 0, 0.4);
 }
+/* Github button */
 
+/* From Uiverse.io by Creatlydev */ 
+.btn-github-box{
+  width: fit-content;
+  padding: 1rem;
+  background: black;
+}
+.btn-github {
+  cursor: pointer;
+  display: flex;
+  gap: .5rem;
+  border: none;
+  transition: all .5s cubic-bezier(.165, .84, .44, 1);
+  border-radius: 100px;
+  font-weight: 800;
+  place-content: center;
+  padding: .75rem 1rem;
+  font-size: .825rem;
+  line-height: 1rem;
+  background-color: #0006;
+  box-shadow: inset 0 1px #ffffff0a, inset 0 0 0 1px #ffffff0a;
+  color: #fff;
+  justify-content: flex-end;
+  align-self: flex-start;
+  text-align: right;
+  margin-left: 3rem;
+}
+
+.btn-github:hover {
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(252, 232, 3, 0.08);
+  color: #fce803;
+  transform: translate(0, -0.25rem);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.btn-github-container{
+  background-color: black;
+  width: fit-content;
+}
 @media (max-width: 768px) {
   .project-detail-content {
     flex-direction: column;
