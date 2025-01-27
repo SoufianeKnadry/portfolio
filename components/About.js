@@ -16,15 +16,15 @@ export function About() {
     cardsRef.current.forEach((card, index) => {
       gsap.fromTo(
         card,
-        { y: 100, opacity: 0.6 }, // Initial position (below)
+        { y: 100, opacity: 0.8, },
         {
-          y: 0, // Final position
+          y: 0, 
           opacity: 1,
           scrollTrigger: {
             trigger: card,
-            start: "top 80%", // Start animation when the card enters 80% of the viewport
-            end: "bottom 50%", // End animation when it reaches 50%
-            scrub: true, // Smooth transition with scroll
+            start: "top 90%", 
+            end: "bottom 40%", 
+            scrub: true, 
           },
         }
       );

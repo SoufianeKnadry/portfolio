@@ -1,6 +1,7 @@
 #about{
   position: relative;
-
+  backdrop-filter: blur(10px); /* Creates the blur effect */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .about-section {
   background-color: var(--color-surface);
@@ -27,6 +28,7 @@
   overflow: hidden;
   max-width: 1000px;
   width: 800px;
+  transition: 0.3s;
 }
 
 .about-card::before {

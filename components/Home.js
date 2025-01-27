@@ -7,26 +7,35 @@ import { gsap } from "gsap";
 export function Home() {
   const cardRef = useRef(null);
   const sectionTitles = useRef([]);
-
+  const backgroundRef = useRef(null);
   useEffect(() => {
     init3DCardEffect();
 
-    // GSAP animation for section titles
     gsap.fromTo(
       sectionTitles.current, 
       { opacity: 0, y: 30 },
       { 
         opacity: 1, 
         y: 0, 
-        stagger: 0.3,  // Stagger the animations by 0.3 seconds
+        stagger: 0.3,  
         ease: "power4.out", 
         duration: 1 
       }
     );
+    gsap.to(backgroundRef.current, {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: backgroundRef.current,
+        start: "top top",  
+        end: "bottom top", 
+        scrub: true,      
+        markers: false,    
+      }
+    });
   }, []);
 
   return (
-    <section id="home" className="home-section">
+    <section id="home" className="home-section" ref={backgroundRef}>
       <div className="home-background" />
       <div className="home-content">
         <div className="card-3d" ref={cardRef}>
