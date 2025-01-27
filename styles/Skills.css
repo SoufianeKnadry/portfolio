@@ -78,6 +78,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1.5rem;
+  justify-content: center; 
+  align-content: center; 
+  padding: 1rem;
 }
 
 @media (max-width: 640px) {

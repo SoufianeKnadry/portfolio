@@ -37,3 +37,11 @@
   color: var(--color-text-muted);
 }
 
+.contact-icons a{
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.contact-icons a:hover{
+  scale: 1.05;
+}

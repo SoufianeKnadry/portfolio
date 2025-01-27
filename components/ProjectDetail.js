@@ -6,9 +6,8 @@ import Image from 'next/image';
 
 export function ProjectDetail({ project, onClose }) {
   const [isVisible, setIsVisible] = useState(false);
-  const titleRef = useRef(null);
   const toolsRef = useRef(null);
-  const descriptionRef = useRef([]); // Create a ref array for description lines
+  const descriptionRef = useRef([]); 
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 50);
@@ -16,19 +15,7 @@ export function ProjectDetail({ project, onClose }) {
   }, []);
 
   useEffect(() => {
-    if (titleRef.current) {
-      const titleText = project.title;
-      gsap.fromTo(
-        titleRef.current,
-        { text: "afgsdjlok2" },
-        {
-          text: titleText,
-          duration: titleText.length * 0.1,
-          ease: "linear",
-          delay: 0.4
-        }
-      );
-    }
+    
 
     if (toolsRef.current) {
       gsap.fromTo(
@@ -131,13 +118,13 @@ export function ProjectDetail({ project, onClose }) {
           </div>
           <div className="project-detail-divider"></div>
           <div className="project-info">
-            <h2 className="project-detail-title" ref={titleRef}></h2>
+            <h2 className="project-detail-title" >{project.title}</h2>
             <div className="project-detail-description-box">
               {project.description.map((desc, index) => (
                 <p
                   key={index}
                   className="project-detail-description"
-                  ref={(el) => (descriptionRef.current[index] = el)} // Assign refs dynamically
+                  ref={(el) => (descriptionRef.current[index] = el)} 
                 >
                   {desc}
                 </p>
