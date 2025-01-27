@@ -1,13 +1,56 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Skill } from "./Skill";
-import { skillCategories } from "../data/skills"; // Import the data
+import { skillCategories } from "../data/skills"; 
 import "../styles/Skills.css";
 
 export function Skills() {
   const [activeSkillCategory, setActiveSkillCategory] = useState("Programming Languages");
+  const skillsSectionRef = useRef(null); 
+
+  // GSAP animation for the skills list
+  const animateSkills = () => {
+    gsap.fromTo(
+      ".skill",
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.6,
+        ease: "expo.out",
+      }
+    );
+  };
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          animateSkills(); 
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    // Start observing the skills section
+    if (skillsSectionRef.current) {
+      observer.observe(skillsSectionRef.current);
+    }
+
+    // Clean up the observer on unmount
+    return () => {
+      if (skillsSectionRef.current) {
+        observer.unobserve(skillsSectionRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    // Trigger animation whenever category changes
     gsap.fromTo(
       ".skill",
       {
@@ -25,7 +68,7 @@ export function Skills() {
   }, [activeSkillCategory]);
 
   return (
-    <section id="skills" className="skills-section">
+    <section id="skills" className="skills-section" ref={skillsSectionRef}>
       <div className="skills-content">
         <h2 className="section-title">Skills</h2>
         <div className="skills-categories">
