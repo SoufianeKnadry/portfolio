@@ -1,93 +1,55 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { TextPlugin } from "gsap/TextPlugin";
 import Image from "next/image";
 import "../styles/Home.css";
-
-gsap.registerPlugin(TextPlugin);
-
-
-
+import { init3DCardEffect } from "../utils/card"; 
 export function Home() {
-  const textRef = useRef(null);
-
-  useEffect(() => {
-    const textElement = textRef.current;
+  const cardRef = useRef(null);
   
-    if (textElement) {
-      gsap.fromTo(
-        textElement,
-        { text: "" },
-        {
-          duration: 2,
-          text: "Welcome to My Portfolio",
-          scrambleText: {
-            text: "Welcome to My Portfolio",
-            chars: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-            revealDelay: 0.2,
-          },
-          delay: 1, 
-        }
-      );
-    }
-    gsap.fromTo(
-      ".profile-card",
-      { y: 300, opacity: 0 },
-      { y: 0, opacity: 1, duration: 3, ease: "expo.out", delay: 0.5 }
-    )
-
-    gsap.fromTo(
-      ".intro-content",
-      { y: -300, opacity: 0 },
-      { y: 0, opacity: 1, duration: 3, ease: "expo.out", delay: 1 }
-    )
-  }, [])
-
+  useEffect(() => {
+    init3DCardEffect();
+  })
   return (
     <section id="home" className="home-section">
       <div className="home-background" />
-
       <div className="home-content">
-        <div className="profile-card">
-          <div className="profile-image">
-            <Image
-              src="/images/soufiane.JPG"
-              alt="Knadry Soufiane"
-              width={400}
-              height={400}
-              className="object-cover"
-            />
-          </div>
-          <div className="profile-details">
-            <h2 className="profile-name">Knadry Soufiane</h2>
-            <p className="profile-title">Web Developer & Designer</p>
-          </div>
-         
-        </div>
-      </div>
-
-      <div>
-        <div className="intro-content">
-          <h1 ref={textRef} className="section-title">Welcome to My Portfolio</h1>
-          <p className="intro-text">
-            I'm passionate about creating beautiful, functional, and user-friendly websites. Explore my projects and get
-            in touch to see how we can work together.
-          </p>
-          <a href="#about" className="cta-button">
-            Learn More About Me
-          </a>
-        </div>
-      </div>
-      <div className="card-3d">
-        <div className="content-card">
+        <div className="card-3d" ref={cardRef}>
+          <div className="content-card">
             <div className="img-container">
-                <div id="container3D">
-                  <Image ></Image>
+              <div id="container3D">
+                <div className="skewed skewed-left">
+                  <div className="image">
+                  <div>
+                    <Image
+                      src="/images/soufiane.JPG"
+                      alt="Knadry Soufiane"
+                      width={350}
+                      height={300}
+                      className="object-cover image"
+                    />
+                  </div>
+                  </div>
                 </div>
+                <div className="home-img-text">
+                  <small>Portfolio</small>
+             
+                  <p>
+                    I am a computer science student at Dawson.
+                  </p>
+                  <h1>Knadry Soufiane</h1>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        <div className="glow"></div>
-    </div>
+      </div>
+      <div className="intro-content">
+        <h1  className="section-title">Welcome to My Portfolio</h1>
+        <p className="intro-text">
+          I'm passionate about creating beautiful, functional, and user-friendly websites. Explore my projects and get
+          in touch to see how we can work together.
+        </p>
+        <a href="#about" className="cta-button">Learn More About Me</a>
+      </div>
     </section>
-  )
+  );
 }
