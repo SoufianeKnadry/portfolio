@@ -78,6 +78,16 @@ export function Home() {
           </a>
         </div>
       </div>
+      <div className="card-3d">
+        <div className="content-card">
+            <div className="img-container">
+                <div id="container3D">
+                  <Image ></Image>
+                </div>
+            </div>
+        </div>
+        <div className="glow"></div>
+    </div>
     </section>
   )
 }
