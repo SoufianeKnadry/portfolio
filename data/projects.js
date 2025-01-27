@@ -30,7 +30,7 @@ export const projectsData = [
       "Utilized LINQ and Entity Framework for streamlined data querying and entity management.",
       "Built an intuitive user interface with Avalonia to ensure a seamless user experience."
     ],
-    videoUrl: "/videos/project1.mp4",
+    videoUrl: "/videos/recipe_app.mp4",
     tools: [
       { name: "C#", imgUrl: "/images/csharp.png" },
       { name: "SQL", imgUrl: "/images/sql.png" },
