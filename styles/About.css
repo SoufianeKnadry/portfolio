@@ -8,7 +8,7 @@
 }
 
 .about-content {
-  max-width: 800px;
+ 
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -16,7 +16,8 @@
 .about-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
+  margin: 0 15rem;
 }
 
 .about-card {
@@ -24,6 +25,8 @@
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  max-width: 1000px;
+  width: 800px;
 }
 
 .about-card::before {
@@ -52,8 +55,6 @@
 
 .about-card-icon {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
   color: var(--color-primary);
 }
 
@@ -80,3 +81,15 @@
   }
 }
 
+
+/* cards */
+
+#card1{
+align-self: flex-start;
+}
+#card2{
+align-self: center;
+}
+#card3{
+align-self: flex-end;
+}

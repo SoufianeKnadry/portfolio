@@ -17,6 +17,8 @@ html {
 }
 
 body {
+  scroll-behavior: smooth;
+
   color: var(--color-text);
   background-color: var(--color-background);
   min-height: 100vh;
@@ -44,9 +46,6 @@ main {
   }
 }
 
-section {
-  padding-top: 5rem;
-}
 
 #contact {
   padding-top: 0;
@@ -75,3 +74,20 @@ section {
   border-radius: 2px;
 }
 
+#home{
+  position: fixed;
+}
+
+#about{
+  margin-top: 100vh;
+  position: relative;
+}
+#skills{
+  position: relative;
+}
+#projects{
+  position: relative;
+}
+#contacts{
+  position: relative;
+}

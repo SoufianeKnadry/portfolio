@@ -2,12 +2,29 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import "../styles/Home.css";
 import { init3DCardEffect } from "../utils/card"; 
+import { gsap } from "gsap";
+
 export function Home() {
   const cardRef = useRef(null);
-  
+  const sectionTitles = useRef([]);
+
   useEffect(() => {
     init3DCardEffect();
-  })
+
+    // GSAP animation for section titles
+    gsap.fromTo(
+      sectionTitles.current, 
+      { opacity: 0, y: 30 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        stagger: 0.3,  // Stagger the animations by 0.3 seconds
+        ease: "power4.out", 
+        duration: 1 
+      }
+    );
+  }, []);
+
   return (
     <section id="home" className="home-section">
       <div className="home-background" />
@@ -18,19 +35,18 @@ export function Home() {
               <div id="container3D">
                 <div className="skewed skewed-left">
                   <div className="image">
-                  <div>
-                    <Image
-                      src="/images/soufiane.JPG"
-                      alt="Knadry Soufiane"
-                      width={350}
-                      height={300}
-                      className="object-cover image"
-                    />
-                  </div>
+                    <div>
+                      <Image
+                        src="/images/soufiane.JPG"
+                        alt="Knadry Soufiane"
+                        width={350}
+                        height={300}
+                        className="object-cover image"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="home-img-text">
-             
                   <p className="profile-desc-info">
                     Computer Science student at Dawson
                   </p>
@@ -42,11 +58,10 @@ export function Home() {
         </div>
       </div>
       <div className="intro-content">
-        <h1  className="section-title">Welcome to My Portfolio</h1>
-        <p className="intro-text">
-          I'm passionate about creating beautiful, functional, and user-friendly websites. Explore my projects and get
-          in touch to see how we can work together.
-        </p>
+        <h1 ref={(el) => sectionTitles.current.push(el)} className="section-title1">Hi There </h1>
+        <h1 ref={(el) => sectionTitles.current.push(el)} className="section-title2">I'm </h1><span className="section-title3">Soufiane Knadry</span>
+        <h1 ref={(el) => sectionTitles.current.push(el)} className="section-title4">a Software Developper</h1>
+        <h1 ref={(el) => sectionTitles.current.push(el)} className="section-title5">currently focused on building user experiences that drive growth</h1>
         <a href="#about" className="cta-button">Learn More About Me</a>
       </div>
     </section>

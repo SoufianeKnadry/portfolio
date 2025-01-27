@@ -71,7 +71,7 @@
 }
 
 .intro-content {
-  max-width: 32rem;
+  max-width: 45rem;
 }
 
 .intro-title {
@@ -87,18 +87,6 @@
   margin-bottom: 2rem;
 }
 
-.cta-button {
-  background-color: var(--color-primary);
-  color: var(--color-background);
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: var(--color-secondary);
-}
 
 @media (min-width: 768px) {
   .home-section {
@@ -220,3 +208,66 @@
   font-weight: 600;
   color: #f8fcff;
 }
+
+/* Welcome message */
+.intro-content {
+  margin-left: 5rem;
+  padding-top: 20px;
+  margin-top: 6rem;
+}
+
+.section-title1 {
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0; 
+  letter-spacing: 3px;
+  align-self: flex-end;
+}
+
+.section-title2
+{
+  display: inline;
+  font-size: 4rem;
+  font-weight: 500;
+  opacity: 0; 
+  letter-spacing: 3px;
+}
+.section-title3 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 0;
+  display: inline;
+  background-image: linear-gradient(to right, #215adf, #afedf1);
+  background-clip: text; 
+  color: transparent;  
+}
+.section-title4{
+  font-size: 3rem;
+  font-weight: 500;
+  opacity: 0; 
+  letter-spacing: 3px;
+}
+.section-title5{
+  color: grey;
+  font-size: 2rem;
+}
+.intro-content h1 {
+  margin: 0 20px;
+}
+
+.cta-button {
+  margin-top: 2rem;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  position: relative;
+  top: 4rem;
+}
+
+.cta-button:hover {
+  background-color: var(--color-secondary);
+}
+
