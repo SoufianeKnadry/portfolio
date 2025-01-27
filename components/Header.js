@@ -8,6 +8,9 @@ export function Header() {
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId.toLowerCase())
+    if (section.id == "home" ){
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
     if (section) {
       section.scrollIntoView({ behavior: "smooth" })
     }
@@ -38,7 +41,7 @@ export function Header() {
         <div className="flex">
           <div className="flex-1">
             <button
-              onClick={() => scrollToSection("Home")}
+              onClick={() => scrollToSection("home")}
               className="logo"
             >
               Knadry Soufiane

@@ -35,7 +35,7 @@ export function Home() {
   }, []);
 
   return (
-    <section id="home" className="home-section" ref={backgroundRef}>
+    <section  className="home-section" ref={backgroundRef}>
       <div className="home-background" />
       <div className="home-content">
         <div className="card-3d" ref={cardRef}>
