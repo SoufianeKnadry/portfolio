@@ -1,0 +1,316 @@
+.project-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.project-detail-overlay.visible {
+  opacity: 1;
+}
+
+.project-detail-container {
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 1200px;
+  height: 80%;
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.project-detail-container.visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #e1e1e1;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease-out 0.2s;
+}
+
+.close-button.visible {
+  opacity: 1;
+}
+
+.project-detail-content {
+  display: flex;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-out 0.2s;
+}
+
+.project-detail-content.visible {
+  opacity: 1;
+}
+
+.project-video {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.video-placeholder {
+  background-color: #121212;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e1e1e1;
+  font-size: 1.5rem;
+}
+
+.project-detail-divider {
+  width: 1px;
+  background-color: #bb86fc;
+  margin: 2rem 0;
+}
+
+.project-info {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.project-detail-title {
+  font-size: 2rem;
+  color: #bb86fc;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+.project-detail-title:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(135deg, #b280ef, #6d4acf);
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+.project-detail-description {
+  padding: 1rem;
+  color: #11110f;
+  font-weight: 600;
+  background-color: #e0e0e0;
+  border-radius: 0rem;
+  line-height: 2;
+  font-family: system-ui;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.7), 
+            0 10px 30px rgba(0, 0, 0, 0.4);
+}
+/* Video details */
+.details-project-video-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px
+}
+.details-project-video{
+  width: 90%;
+  align-self: center;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.tools-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1.5rem 0 .5rem;
+  text-align: center;
+  align-self: start;
+  position: relative;
+  left: 3rem;
+  top: 1rem;
+  color: #bb86fc;
+  transition: 0.3s;
+}
+.tools-header:hover{
+  scale: 1.05;
+}
+ .tools-header:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, #b280ef, #6d4acf);
+    border-radius: 2px;
+    transition: 0.5s;
+}
+.tools-header:hover::after {
+  scale: 1.05;
+  width: 400%; 
+}
+/* Icons details*/
+
+.details-tools-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  background: linear-gradient(45deg, #020102, #201a2b);
+  padding: 1.5rem;
+  margin: 2rem;
+  border-radius: 2rem;
+  background: linear-gradient(45deg, #060606, #070420);
+  scale: 0.9;
+  transition: 0.3s;
+}
+.details-tools-div:hover{
+  scale: 0.91;
+  box-shadow: -1px -1px 11px 8px #0a0a0a1a;
+
+}
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.tool-icon-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 18px;
+  color: #666;
+}
+
+.tool-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Project description */
+
+.project-detail-description-box {
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #080809;
+  border-radius: 11px;
+  box-shadow: inset -1px -2px 6px rgb(41 35 35 / 70%), 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+/* Github button */
+
+/* From Uiverse.io by Creatlydev */ 
+.btn-github-box{
+  width: fit-content;
+  padding: 1rem;
+  background: black;
+}
+.btn-github {
+  cursor: pointer;
+  display: flex;
+  gap: .5rem;
+  border: none;
+  transition: all .5s cubic-bezier(.165, .84, .44, 1);
+  border-radius: 100px;
+  font-weight: 800;
+  place-content: center;
+  padding: .75rem 1rem;
+  font-size: .825rem;
+  line-height: 1rem;
+  background-color: #0006;
+  box-shadow: inset 0 1px #ffffff0a, inset 0 0 0 1px #ffffff0a;
+  color: #fff;
+  justify-content: flex-end;
+  align-self: flex-start;
+  text-align: right;
+  margin-left: 3rem;
+}
+
+.btn-github:hover {
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(252, 232, 3, 0.08);
+  color: #fce803;
+  transform: translate(0, -0.25rem);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.btn-github-container{
+  background-color: black;
+  width: fit-content;
+}
+@media (max-width: 768px) {
+  .project-detail-content {
+    flex-direction: column;
+  }
+
+  .project-detail-divider {
+    width: 90%;
+    height: 1px;
+    margin: 1rem auto;
+  }
+  .details-project-video{
+    margin-top: 3rem;
+  }
+  .details-tools-div{
+    width: fit-content;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 7rem;
+  }
+  .tool-icon{
+    width: 12px;
+    height: 12px;
+  }
+  .project-detail-description{
+    padding: 1rem;
+    
+  }
+  .project-detail-description-box {
+    margin: 0;
+    padding: 1rem;
+  }
+  .project-info{
+    padding: 1rem;
+  }
+}
+
