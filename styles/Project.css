@@ -47,9 +47,36 @@
   text-align: center;
 }
 
-@media (max-width: 768px) {
+/* ...existing code... */
+
+@media (max-width: 767px) {
   .project-card {
     max-width: 100%;
+    aspect-ratio: auto;
+    border-radius: 0.25rem;
+  }
+
+  .project-card:hover {
+    scale: 1.02;
+  }
+
+  .video-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 80%);
+  }
+
+  .overlay-text {
+    bottom: 5%;
+    left: 5%;
+    font-size: 0.875rem;
+  }
+
+  .project-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+    text-align: center;
   }
 }
-

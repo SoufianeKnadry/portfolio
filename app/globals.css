@@ -17,15 +17,12 @@ html {
 }
 
 body {
-  scroll-behavior: smooth;
-
   color: var(--color-text);
   background-color: var(--color-background);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
 #__next {
   flex: 1;
   display: flex;
@@ -74,20 +71,32 @@ main {
   border-radius: 2px;
 }
 
-#home{
-  position: fixed;
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .flex
+  {
+    flex-direction: column;
+  }
 }
 
-#about{
-  margin-top: 100vh;
-  position: relative;
-}
-#skills{
-  position: relative;
-}
-#projects{
-  position: relative;
-}
-#contacts{
-  position: relative;
+@media (min-width: 768px) {
+  #home{
+    position: fixed;
+  }
+  
+  #about{
+    margin-top: 100vh;
+    position: relative;
+  }
+  #skills{
+    position: relative;
+  }
+  #projects{
+    position: relative;
+  }
+  #contacts{
+    position: relative;
+  }
 }

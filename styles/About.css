@@ -1,6 +1,6 @@
 #about{
   position: relative;
-  backdrop-filter: blur(10px); /* Creates the blur effect */
+  backdrop-filter: blur(10px); 
   background-color: rgba(0, 0, 0, 0.5);
 }
 .about-section {
@@ -78,11 +78,47 @@
 }
 
 @media (max-width: 768px) {
-  .about-card::before {
-    transform: skew(0);
+  #about {
+    padding: 2rem 1rem;
+  }
+
+  .about-section {
+    padding: 2rem 0;
+  }
+
+  .about-content {
+    padding: 0 1rem;
+  }
+
+  .about-grid {
+    margin: 0 1rem;
+    gap: 2rem;
+  }
+
+  .about-card {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .about-card-title {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+  }
+
+  .about-card-text {
+    font-size: 0.875rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  #card1, #card2, #card3 {
+    align-self: center;
   }
 }
-
 
 /* cards */
 
@@ -94,4 +130,10 @@ align-self: center;
 }
 #card3{
 align-self: flex-end;
+}
+
+@media (max-width: 768px) {
+  .about-card-title{
+    margin-left: 1rem;
+  }
 }
