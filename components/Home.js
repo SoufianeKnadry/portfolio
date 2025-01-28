@@ -72,7 +72,7 @@ export function Home() {
                   <div className="image">
                     <div>
                       <Image
-                        src="/images/soufiane2.png"
+                        src="/images/Soufiane2.jpg"
                         alt="Knadry Soufiane"
                         width={350}
                         height={300}
