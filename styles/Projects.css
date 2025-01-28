@@ -1,0 +1,117 @@
+.projects-section {
+  background-color: var(--color-background);
+  padding: 2rem 0;
+  min-height: 60vh;
+}
+
+.projects-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.projects-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(135deg, #B280EF, #6D4ACF);
+  border-radius: 2px;
+
+}
+
+.projects-container {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  background-color: #08090E;
+  border-radius: 13px;
+  box-shadow: 0 6px 12px #00000080, 0 12px 24px #0006, 0 16px 32px #0000004d;
+}
+
+.projects-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 50%;
+  background-color: #6D4ACF;
+  color: var(--color-background);
+  transition: 0.2s;
+}
+
+.scroll-button:hover {
+  background-color: #c0b3e0;
+  scale: 1.05;
+}
+.scroll-button:active {
+  background-color: #dda6d0;
+  scale: 0.95;
+}
+
+
+.scroll-button-left {
+  left: 1.5rem;
+  background-color: #B280EF;
+}
+
+.scroll-button-right {
+  right: 1.5rem;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-text-muted);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-dot.active {
+  background-color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    flex: 0 0 50%;
+  }
+}
