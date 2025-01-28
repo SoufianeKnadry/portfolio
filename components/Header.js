@@ -8,8 +8,12 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId) => {
+   
     const section = document.getElementById(sectionId)
-    if (section) {
+    if (section.id == "home" ){
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+    else if (section) {
       section.scrollIntoView({ behavior: "smooth" })
     }
     setIsMenuOpen(false)
@@ -66,7 +70,8 @@ export function Header() {
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="text-base font-medium text-[var(--color-text)] hover:text-[var(--color-secondary)] capitalize"
+                className="text-xl font-medium text-[var(--color-text)] hover:text-[var(--color-secondary)] capitalize"
+
               >
                 {item}
               </button>
