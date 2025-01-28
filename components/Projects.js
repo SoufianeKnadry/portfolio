@@ -22,7 +22,7 @@ export function Projects() {
     updateTotalSlides();
     window.addEventListener("resize", updateTotalSlides);
     return () => window.removeEventListener("resize", updateTotalSlides);
-  }, []);
+  }, [projectsData.length]);
 
   const scroll = (direction) => {
     if (direction === "left") {
